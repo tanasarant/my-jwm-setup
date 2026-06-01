@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<JWM>
+    <Key mask="A" key="Tab">next</Key>
+    
+    <Key mask="AS" key="Tab">prev</Key>
+    
+    <Key mask="A" key="F4">close</Key>
+    <Key mask="A" key="F10">maximize</Key>
+    <Key mask="4" key="d">showdesktop</Key>
+    <Key mask="CA" key="Delete">exit</Key>
+    
+    <Key mask="4" key="space">exec:rofi -show drun</Key>
+    <Key mask="4" key="Left">left</Key>
+    <Key mask="4" key="Right">right</Key>
+    <Key mask="4" key="Up">up</Key>
+    <Key mask="4" key="Down">down</Key>
+
+    <Key mask="C" key="Escape">exec:rofi -show drun</Key>
+
+    <Key mask="CA" key="t">exec:x-terminal-emulator</Key>
+    
+    <Key mask="4" key="e">exec:nemo</Key>
+    
+    <Key key="Print">exec:gnome-screenshot</Key>
+    <Key mask="A" key="Print">exec:gnome-screenshot -w</Key>
+    
+    <Key mask="CA" key="l">exec:xscreensaver-command -lock</Key>
+
+    <Key mask="4S" key="X">exec:truncate -s 0 ~/.jwmrc &amp;&amp; jwm -restart</Key>
+</JWM>

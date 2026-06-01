@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<JWM>
+
+    <Include>/etc/jwm/system.jwmrc</Include>
+    <StartupCommand>/usr/local/bin/xdgmenumaker -f jwm > /home/rachatapacharin/.jwmrc_menu</StartupCommand>
+
+    <RootMenu onroot="12">
+        <Include>/home/rachatapacharin/.jwmrc_menu</Include>
+        
+        <Program icon="utilities-terminal" label="Terminal">x-terminal-emulator</Program>
+        <Separator/>
+        <Program icon="lock" label="Lock">
+           xscreensaver-command -lock
+        </Program>
+        <Separator/>
+        <Restart label="Restart JWM" icon="reload"/>
+        <Program label="Power Off">/usr/libexec/jwm/jwm-poweroff.sh</Program>
+        <Exit label="Log Out" confirm="true" icon="exit"/>
+    </RootMenu>
+    
+    <Include>/home/rachatapacharin/.jwmrc_keys</Include>
+</JWM>

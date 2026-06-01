@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# ตรวจสอบว่าเชสชันปัจจุบันคือ JWM ใช่หรือไม่ (เพื่อไม่ให้กวน Cinnamon)
+if [ "$XDG_CURRENT_DESKTOP" = "JWM" ] || [ "$DESKTOP_SESSION" = "jwm" ]; then
+
+    # 1. ตั้งค่าสลับภาษาไทย-อังกฤษ (US/TH) กด Alt+Shift
+    setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:caps us,th &
+
+    # 2. รันโปรแกรม alttab สลับหน้าต่างสไตล์ Compact ฟอนต์ Garuda 10 แบบเงียบๆ
+    alttab -w 1 -i 32x32 -mk Super_L -font "xft:Garuda,sans-10" > /dev/null 2>&1 &
+
+    # 3. สั่งเปิดหน้าต่าง Terminal ขึ้นมาเพื่อรันสคริปต์ Monitor ของคุณโดยเฉพาะ
+    # (และใช้ wmctrl สั่งให้หน้าต่าง Terminal ตัวนี้อยู่บนสุดเสมอ Stay on Top)
+    gnome-terminal --title="System-Monitor" -- sh -c "
+        (sleep 1 && wmctrl -r 'System-Monitor' -b add,above) &
+        watch -t -n 1 \"
+            gpu_info=\\\$(nvidia-smi --query-gpu=utilization.gpu,memory.used,temperature.gpu --format=csv,noheader,nounits | awk -F', ' '{printf \\\"GPU %s%% | VRAM %.1f GB | %s°C\\\", \\\$1, \\\$2/1024, \\\$3}');
+            cpu_usage=\\\$(grep 'cpu ' /proc/stat | awk '{usage=(\\\$2+\\\$4)*100/(\\\$2+\\\$4+\\\$5)} END {printf \\\"%d\\\", usage}');
+            cpu_temp=\\\$(sensors | grep 'Package id 0' | awk '{printf \\\"%d°C\\\", \\\$4}');
+            ram_info=\\\$(free -h | awk '/Mem:/ {print \\\$3 \\\"/\\\" \\\$2}');
+            swap_info=\\\$(free -h | awk '/Swap:/ {print \\\$3 \\\"/\\\" \\\$2}');
+            disk_info=\\\$(df -h / | awk 'NR==2 {print \\\$4}');
+
+            echo \\\" [GPU] \\\$gpu_info\\\"
+            echo \\\" [CPU] \\\$cpu_usage% | \\\$cpu_temp\\\"
+            echo \\\" [RAM] \\\$ram_info | [SWAP] \\\$swap_info\\\"
+            echo \\\" [DISK FREE] \\\$disk_info\\\"
+        \"
+    " &
+
+fi

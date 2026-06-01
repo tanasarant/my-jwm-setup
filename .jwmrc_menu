@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<JWM>
+<Menu label="Applications">
+  <Menu label="Accessories">
+    <Program label="Archive Manager">file-roller </Program>
+    <Program label="Calculator">gnome-calculator</Program>
+    <Program label="Character Map">gucharmap</Program>
+    <Program label="Disks">gnome-disks</Program>
+    <Program label="Document Viewer">xreader </Program>
+    <Program label="File Renamer">bulky</Program>
+    <Program label="Files">nemo </Program>
+    <Program label="GVim">gvim -f </Program>
+    <Program label="Image Viewer">xviewer </Program>
+    <Program label="Notes">sticky</Program>
+    <Program label="Onboard">onboard</Program>
+    <Program label="Passwords and Keys">seahorse </Program>
+    <Program label="Screenshot">gnome-screenshot --interactive</Program>
+    <Program label="Shutter">shutter </Program>
+    <Program label="Text Editor">xed </Program>
+    <Program label="USB Image Writer">mintstick -m iso</Program>
+    <Program label="USB Stick Formatter">mintstick -m format</Program>
+    <Program label="Vim">/usr/bin/x-terminal-emulator -e vim </Program>
+    <Program label="Warpinator">warpinator</Program>
+  </Menu>
+  <Menu label="Development">
+    <Program label="Geany">geany </Program>
+    <Program label="IDLE">/usr/bin/idle </Program>
+    <Program label="IDLE (using Python-3.12)">/usr/bin/idle-python3.12</Program>
+  </Menu>
+  <Menu label="Graphics">
+    <Program label="Document Scanner">simple-scan</Program>
+    <Program label="Drawing">drawing </Program>
+    <Program label="Pix">pix </Program>
+    <Program label="drawio">/opt/drawio/drawio </Program>
+  </Menu>
+  <Menu label="Multimedia">
+    <Program label="Celluloid">celluloid </Program>
+    <Program label="Hypnotix">hypnotix</Program>
+    <Program label="Rhythmbox">rhythmbox </Program>
+  </Menu>
+  <Menu label="Network">
+    <Program label="Discord">cd /usr/bin ; /usr/bin/discord</Program>
+    <Program label="Firefox Web Browser">firefox </Program>
+    <Program label="Matrix">mintchat</Program>
+    <Program label="Thunderbird Mail">thunderbird </Program>
+    <Program label="Transmission">transmission-gtk </Program>
+    <Program label="Web Apps">webapp-manager</Program>
+  </Menu>
+  <Menu label="Office">
+    <Program label="Calendar">gnome-calendar </Program>
+    <Program label="Library">thingy</Program>
+    <Program label="LibreOffice">libreoffice </Program>
+    <Program label="LibreOffice Draw">libreoffice --draw </Program>
+    <Program label="LibreOffice Impress">libreoffice --impress </Program>
+    <Program label="calc: LibreOffice Calc">libreoffice --calc </Program>
+    <Program label="writer: LibreOffice Writer">libreoffice --writer </Program>
+  </Menu>
+  <Menu label="Settings">
+    <Program label="Advanced Network Configuration">nm-connection-editor</Program>
+    <Program label="Bluetooth Manager">blueman-manager</Program>
+    <Program label="Fcitx Configuration">fcitx-configtool</Program>
+    <Program label="Firewall Configuration">gufw</Program>
+    <Program label="IBus Preferences">ibus-setup</Program>
+    <Program label="Input method">mintlocale-im</Program>
+    <Program label="Languages">mintlocale</Program>
+    <Program label="Login Window">pkexec lightdm-settings</Program>
+    <Program label="Online Accounts">gnome-online-accounts-gtk</Program>
+    <Program label="Printers">system-config-printer</Program>
+    <Program label="Welcome Screen">mintwelcome</Program>
+  </Menu>
+  <Menu label="System">
+    <Program label="Backup Tool">mintbackup</Program>
+    <Program label="Disk Usage Analyzer">baobab </Program>
+    <Program label="Driver Manager">driver-manager</Program>
+    <Program label="Fcitx">fcitx</Program>
+    <Program label="Htop">/usr/bin/x-terminal-emulator -e htop</Program>
+    <Program label="NVIDIA X Server Settings">/usr/bin/nvidia-settings</Program>
+    <Program label="Software Manager">mintinstall</Program>
+    <Program label="Software Sources">pkexec mintsources</Program>
+    <Program label="Synaptic Package Manager">synaptic-pkexec</Program>
+    <Program label="System Monitor">gnome-system-monitor</Program>
+    <Program label="System Reports">mintreport</Program>
+    <Program label="Timeshift">timeshift-launcher</Program>
+    <Program label="Update Manager">mintupdate</Program>
+  </Menu>
+</Menu>
+</JWM>
