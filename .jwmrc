@@ -2,6 +2,8 @@
 <JWM>
 
     <Include>/etc/jwm/system.jwmrc</Include>
+    <Desktops width="1" height="1">
+    </Desktops>
     <StartupCommand>/usr/local/bin/xdgmenumaker -f jwm > /home/rachatapacharin/.jwmrc_menu</StartupCommand>
 
     <RootMenu onroot="12">
@@ -19,4 +21,13 @@
     </RootMenu>
     
     <Include>/home/rachatapacharin/.jwmrc_keys</Include>
+    <TaskListStyle list="all" group="false">
+       <Font>Sans-10:condensed</Font>
+         <Active>
+          <Foreground>#FFFFFF</Foreground>
+          <Background>#555555</Background>
+         </Active>
+         <Foreground>#FFFFFF</Foreground>
+         <Background>#333333</Background>
+    </TaskListStyle>
 </JWM>
